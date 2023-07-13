@@ -1,8 +1,9 @@
 import { createContext, useContext, useReducer } from "react";
-import products from "../data/products";
 import CartReducer from "../reducer/CartReducer";
+import products from "../data/products";
 
 const CartContext = createContext();
+
 const initState = {
   products: products,
   total: 0,
@@ -10,7 +11,7 @@ const initState = {
 };
 
 export const CartProvider = ({ children }) => {
-  const { state, dispatch } = useReducer(CartReducer, initState);
+  const [state, dispatch] = useReducer(CartReducer, initState);
   return <CartContext.Provider value={{ ...state }}>{children}</CartContext.Provider>;
 };
 

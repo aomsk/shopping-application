@@ -1,0 +1,42 @@
+.card {
+  border-bottom: 1px solid #1b1b1b;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+}
+
+.name {
+  width: 300px;
+  margin-right: 10px;
+}
+
+.quantity {
+  margin-right: 60px;
+}
+
+input {
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 18px;
+}
+
+button {
+  padding: .5rem 1rem;
+  font-size: 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #E74C3C;
+  color: #fff;
+}

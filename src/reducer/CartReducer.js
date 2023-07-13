@@ -21,6 +21,12 @@ const CartReducer = (state, action) => {
       amount,
     };
   }
+  if (action.type === "REMOVE_ITEM") {
+    return {
+      ...state,
+      products: state.products.filter((item) => item.id !== action.payload),
+    };
+  }
   // return state;
 };
 

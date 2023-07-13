@@ -12,8 +12,14 @@ const initState = {
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, initState);
+
   function formatMoney(money) {
     return money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  }
+
+  function removeItem(id) {
+    console.log("Remove ID: ", id);
+    dispatch({ type: "REMOVE_ITEM", payload: id });
   }
 
   useEffect(() => {
@@ -21,7 +27,11 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: "CALCULATE_TOTAL" });
   }, [state.products]);
 
-  return <CartContext.Provider value={{ ...state, formatMoney }}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ ...state, formatMoney, removeItem }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
 export const useCart = () => {

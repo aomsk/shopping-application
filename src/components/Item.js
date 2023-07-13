@@ -3,7 +3,7 @@ import "../styles/Item.css";
 import { useCart } from "../context/CartContext";
 
 export default function Item({ id, name, image, price, quantity }) {
-  const { formatMoney } = useCart();
+  const { formatMoney, removeItem } = useCart();
 
   return (
     <div className="card">
@@ -18,7 +18,7 @@ export default function Item({ id, name, image, price, quantity }) {
         <button type="button">-</button>
       </div>
       <div className="total-price">{formatMoney(quantity * price)}</div>
-      <button type="button" className="delete-btn">
+      <button type="button" className="delete-btn" onClick={() => removeItem(id)}>
         Delete
       </button>
     </div>

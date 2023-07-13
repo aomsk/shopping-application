@@ -5,7 +5,6 @@ import "../styles/Cart.css";
 
 export default function Cart() {
   const { products } = useCart();
-  console.log("products: ", products);
 
   return (
     <div className="cart-container">

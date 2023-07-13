@@ -27,13 +27,20 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: "ADD_QUANTITY", payload: id });
   }
 
+  function subTractQuantity(id) {
+    console.log("SubTract quantity ID: ", id);
+    dispatch({ type: "SUBTRACT_QUANTITY", payload: id });
+  }
+
   useEffect(() => {
     console.log("Calculate Total Price");
     dispatch({ type: "CALCULATE_TOTAL" });
   }, [state.products]);
 
   return (
-    <CartContext.Provider value={{ ...state, formatMoney, removeItem, addQuantity }}>
+    <CartContext.Provider
+      value={{ ...state, formatMoney, removeItem, addQuantity, subTractQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );

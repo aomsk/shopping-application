@@ -42,6 +42,24 @@ const CartReducer = (state, action) => {
       products: update_quantity,
     };
   }
+
+  if (action.type === "SUBTRACT_QUANTITY") {
+    let update_quantity = state.products
+      .map((item) => {
+        if (item.id === action.payload) {
+          return {
+            ...item,
+            quantity: item.quantity - 1,
+          };
+        }
+        return item;
+      })
+      .filter((item) => item.quantity !== 0);
+    return {
+      ...state,
+      products: update_quantity,
+    };
+  }
   // return state;
 };
 

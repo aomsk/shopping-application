@@ -5,7 +5,7 @@ const products = [
     image:
       "https://www.neweracap.co.th/cdn/shop/products/ssvnth.zone-1682409056-60359542_9FORTYAF_Q223_BOOKING_PROGRAM_AU_NEYYANCO_BLACK_3QL_800x.jpg?v=1682412517",
     price: 2000,
-    quantity: 3,
+    quantity: 1,
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const products = [
     image:
       "https://www.philips.co.th/c-dam/b2c/category-pages/sound-and-vision/portable-audio/master/homepage/TAT5505-hero-product-section.jpg",
     price: 1500,
-    quantity: 2,
+    quantity: 1,
   },
   {
     id: 3,

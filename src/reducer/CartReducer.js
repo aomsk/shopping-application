@@ -27,6 +27,21 @@ const CartReducer = (state, action) => {
       products: state.products.filter((item) => item.id !== action.payload),
     };
   }
+  if (action.type === "ADD_QUANTITY") {
+    let update_quantity = state.products.map((item) => {
+      if (item.id === action.payload) {
+        return {
+          ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+      return item;
+    });
+    return {
+      ...state,
+      products: update_quantity,
+    };
+  }
   // return state;
 };
 

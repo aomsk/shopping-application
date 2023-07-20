@@ -1,5 +1,4 @@
 # Shopping Application
-workshop by Kong Ruksiam
 
 ### Features 💪
 * show all product
